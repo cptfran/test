@@ -10,11 +10,13 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies
         run: |
+          python3 -m venv venv
+          source venv/bin/activate
           python -m pip install --upgrade pip
           pip install cython numpy scipy
-        #   pip install -r requirements.txt
       - name: Build
         run: |
+          source venv/bin/activate
           python setup.py build_ext
       - name: Run tests
         run: pytest
