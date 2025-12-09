@@ -4,6 +4,6 @@ import numpy
 
 
 setup(
-    ext_modules = cythonize("tropicalpy.pyx"),
+    ext_modules = cythonize("cython/tropicalpy.pyx"),
     include_dirs=[numpy.get_include()]
 )
